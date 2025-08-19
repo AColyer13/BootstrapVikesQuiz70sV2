@@ -582,3 +582,35 @@ body.night-mode {
     box-sizing: border-box;
   }
 }
+
+/* === Responsive: Ultra-Small Screens (iPhone Display Zoom, ≤375px) === */
+@media (max-width: 375px) {
+  html {
+    font-size: 15px !important;
+  }
+  h1 {
+    font-size: clamp(1.2rem, 1.1rem + 2vw, 1.6rem) !important;
+  }
+  .container {
+    padding: 
+      clamp(0.7rem, 2vh, 1rem)
+      max(calc(var(--safe-right) + 0.6rem), 0.6rem)
+      clamp(1rem, 2vh, 1.3rem)
+      max(calc(var(--safe-left) + 0.6rem), 0.6rem) !important;
+  }
+  #options-container .btn,
+  #next-button.btn-warning,
+  #restart-button.btn-warning,
+  #start-button.btn-warning {
+    font-size: 1rem !important;
+    padding-top: 0.55rem !important;
+    padding-bottom: 0.55rem !important;
+  }
+  .question-box-fixed {
+    min-height: 3em !important;
+    font-size: 1rem !important;
+  }
+  #score-container .answers .answer-line {
+    grid-template-columns: 110px 1fr;
+  }
+}
