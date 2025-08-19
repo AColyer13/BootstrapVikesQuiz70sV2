@@ -313,10 +313,33 @@ window.addEventListener('resize', () => {
   requestAnimationFrame(updateCentering);
 });
 
+// Desktop zoom fix: forcibly scale back to 1:1 if zoom detected
+function fixDesktopZoom() {
+  // Only apply on desktop (not touch devices)
+  if (matchMedia('(pointer: coarse)').matches) return;
+  // If zoomed (devicePixelRatio != 1), scale back
+  if (window.devicePixelRatio !== 1) {
+    document.body.style.transform = `scale(${1 / window.devicePixelRatio})`;
+    document.body.style.transformOrigin = 'top left';
+    document.body.style.width = `${window.innerWidth * window.devicePixelRatio}px`;
+    document.body.style.height = `${window.innerHeight * window.devicePixelRatio}px`;
+  } else {
+    document.body.style.transform = '';
+    document.body.style.transformOrigin = '';
+    document.body.style.width = '';
+    document.body.style.height = '';
+  }
+}
+window.addEventListener('resize', fixDesktopZoom);
+window.addEventListener('DOMContentLoaded', fixDesktopZoom);
+
 // Debug Helper: Expose quiz state for console inspection
 window.__quizDebug = () => ({
   startBtn: !!els.startBtn,
   itemsLength: items.length,
   lockedBody: document.body.matches(':not(.results-active)') && getComputedStyle(document.body).position === 'fixed',
   touchAction: getComputedStyle(document.documentElement).touchAction + ' | body: ' + getComputedStyle(document.body).touchAction
+
 });
+
+// No changes needed for scaling, as all height/width calculations use px now.
