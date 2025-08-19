@@ -311,7 +311,7 @@ h3.question-flex {
 #score-container #summary-container .mb-2 {
   margin: 0 !important;
   background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: none !important;
   border-radius: 14px;
   padding: 10px 12px 10px 12px;
   backdrop-filter: blur(6px) saturate(160%);
@@ -422,8 +422,6 @@ progress#quiz-progress::-webkit-progress-value {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 12px;
-  margin-bottom: 12px;
 }
 .question-box-fixed.overflow { align-items: flex-start; }
 .question-box-fixed .question-flex {
@@ -493,14 +491,67 @@ body.night-mode {
   align-items: center;
   justify-content: center;
   min-height: 220px;
+  background: rgba(80, 40, 130, 0.45); /* translucent */
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-radius: 18px;
+  border: 2px solid rgba(255,255,255,0.22); /* add border to review card */
+  box-shadow: 0 4px 24px -8px rgba(0,0,0,0.18);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
-#score-container .review-panel .question-box-fixed {
-  min-height: 64px;
-  padding: 0 4px;
+
+/* Ensure .review-card fills width on small screens */
+@media (max-width: 600px) {
+  #score-container .review-card {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* Make .answers and its children solid (no background/blur) */
+#score-container .review-card .answers,
+#score-container .review-card .answers .answer-line {
+  background: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Make review panel and summary container block and full width in review mode */
+#score-container .review-panel,
+#score-container #summary-container {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Make review-card fill parent */
+#score-container .review-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Ensure consistent gap and alignment in review panel */
+#score-container .review-panel {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  gap: 0 !important;
 }
 
 /* === Consistent vertical spacing for review panel elements === */
