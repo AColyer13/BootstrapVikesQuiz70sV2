@@ -72,7 +72,7 @@ body {
   margin: 0;
   width: 100%;
   max-width: 760px;
-  min-width: 320px;
+  min-width: 200px;
   z-index: 10;
   /* Remove flex centering */
   display: block;
@@ -159,6 +159,7 @@ body:not(.results-active) #summary-container {
   border-radius: 20px;
   padding:
     28px 24px 32px 24px;
+  margin: 8px !important;
   margin-bottom: 0 !important; /* Remove bottom margin */
   box-shadow:
     0 0.5rem 1.25rem -0.4rem rgba(0,0,0,0.6),
@@ -388,15 +389,36 @@ progress#quiz-progress::-webkit-progress-value {
     max-height: 100vh;
     /* Remove flex/grid centering */
   }
-  .container {
-    width: min(100%, 640px);
-    margin-inline: auto;
-    padding: 18px 18px 32px 18px !important;
-    padding-top: 22px;
-  }
   h1 { font-size: 2rem; }
   .question-box-fixed { min-height: 3.5rem; }
   #score-container .review-panel .question-box-fixed { min-height: 4.5rem; }
+  /* Responsive: Buttons, Progress Bar, Question Number, Quiz Title */
+  #options-container .btn,
+  #next-button,
+  #restart-button,
+  #start-button {
+    font-size: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  progress#quiz-progress {
+    max-width: 98vw;
+    min-width: 0;
+  }
+  #question-row .badge,
+  #question-row {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    word-break: break-word;
+  }
 }
 @media (max-width: 420px) {
   .question-box-fixed { min-height: 4rem; }
@@ -407,6 +429,24 @@ progress#quiz-progress::-webkit-progress-value {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     font-size: clamp(0.95rem, 1rem, 1.1rem); /* min 1rem, preferred 1.1rem, max 1.25rem */
+  }
+  #options-container .btn,
+  #next-button,
+  #restart-button,
+  #start-button {
+    font-size: 0.95rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  progress#quiz-progress {
+    max-width: 99vw;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  #question-row .badge,
+  #question-row {
+    font-size: 0.95rem;
   }
 }
 
@@ -702,3 +742,6 @@ body.night-mode {
   border: none !important;
   box-shadow: 0 4px 24px -8px rgba(0,0,0,0.18);
 }
+
+/* No conflicting overrides found for .container, .main-wrapper, or #quiz-container */
+/* No changes needed */
