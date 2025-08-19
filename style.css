@@ -415,24 +415,15 @@ progress#quiz-progress::-webkit-progress-value {
 
 /* === Quiz Container: More space for question area === */
 #quiz-container .question-box-fixed {
-  min-height: 7.5em; /* fits 3-4 lines of large text */
-  max-height: none;
-  padding: 1.5rem 1.2rem 1rem 1.2rem; /* top right bottom left */
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  overflow: visible;
-  background: none;
+  min-height: 5.5em; /* slightly taller for quiz questions */
+  margin-bottom: 1.5rem; /* extra margin below question */
 }
 
 /* === Summary Container: More space for question area (final fix) === */
 #score-container .review-panel .question-box-fixed {
   min-height: 7.5em; /* fits 3-4 lines of large text */
   max-height: none;
-  padding: 1.5rem 1.2rem 1rem 1.2rem; /* top right bottom left */
+  padding: 1.5rem 1.2rem; /* generous vertical/horizontal padding */
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -498,7 +489,7 @@ body.night-mode {
 #score-container .review-panel .question-box-fixed {
   min-height: 7.5em; /* fits 3-4 lines of large text */
   max-height: none;
-  padding: 1.5rem 1.2rem 1rem 1.2rem; /* top right bottom left */
+  padding: 1.5rem 1.2rem; /* generous vertical/horizontal padding */
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -632,7 +623,6 @@ body.night-mode {
       max(calc(var(--safe-right) + 0.6rem), 0.6rem)
       clamp(1rem, 2vh, 1.3rem)
       max(calc(var(--safe-left) + 0.6rem), 0.6rem) !important;
-    padding-bottom: 3.5rem !important; /* extra space for Safari toolbar/link area */
   }
   #options-container .btn,
   #next-button.btn-warning,
