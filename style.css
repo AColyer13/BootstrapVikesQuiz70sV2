@@ -632,6 +632,7 @@ body.night-mode {
       max(calc(var(--safe-right) + 0.6rem), 0.6rem)
       clamp(1rem, 2vh, 1.3rem)
       max(calc(var(--safe-left) + 0.6rem), 0.6rem) !important;
+    padding-bottom: 3.5rem !important; /* extra space for Safari toolbar/link area */
   }
   #options-container .btn,
   #next-button.btn-warning,
