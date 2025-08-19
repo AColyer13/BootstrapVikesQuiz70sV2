@@ -614,3 +614,50 @@ body.night-mode {
     grid-template-columns: 110px 1fr;
   }
 }
+
+/* === Landscape orientation on small devices === */
+@media (max-width: 600px) and (orientation: landscape) {
+  html { font-size: 14px !important; }
+  body { padding: 0.5rem !important; }
+  .container { padding: 0.7rem !important; }
+  h1 { font-size: 1.1rem !important; }
+}
+
+/* === Very short screens (foldables, split-screen, landscape phones) === */
+@media (max-height: 400px) {
+  html { font-size: 13px !important; }
+  .container { padding: 0.5rem !important; }
+  #options-container .btn { font-size: 0.95rem !important; }
+}
+
+/* === High pixel density screens (Retina, etc.) === */
+@media (min-resolution: 2dppx) {
+  /* Optional: Slightly increase contrast or font-weight for readability */
+  body, h1, h3, .btn { font-weight: var(--fw-bold); }
+}
+
+/* === Extra-tall/narrow screens (iPhone SE, Mini, etc.) === */
+@media (max-width: 350px) {
+  html { font-size: 14px !important; }
+  .container { padding: 0.5rem !important; }
+  #options-container .btn { font-size: 0.95rem !important; }
+}
+
+/* === Foldable devices: very wide screens (unfolded) === */
+@media (min-width: 900px) and (max-width: 1600px) and (max-height: 900px) {
+  .main-wrapper, .container, #score-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  html { font-size: 18px; }
+}
+
+/* === Foldable devices: spanning (hinge/fold) === */
+@media (spanning: single-fold-vertical) {
+  .container {
+    /* Add extra padding to avoid hinge area */
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
