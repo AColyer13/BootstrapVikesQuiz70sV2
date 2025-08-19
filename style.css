@@ -259,15 +259,22 @@ h3.question-flex {
 
 /* === Options & Controls === */
 #options-container {
-  margin-top: 0 !important;
-  margin-bottom: 16px;
+  margin-bottom: 0 !important; /* Remove bottom margin */
 }
 #next-button,
 #restart-button,
-#start-button { margin-top: 16px; }
+#start-button {
+  margin-top: 0 !important; /* Remove top margin from the next button */
+}
 .btn { margin-bottom: 8px; }
 #score-container,
 #quiz-container { overflow: visible; }
+#options-container .btn {
+  margin-bottom: 12px; /* slightly more room between options */
+}
+#options-container .btn:last-child {
+  margin-bottom: 8px; /* matches other button gaps, leaves a tad more room */
+}
 
 /* === Score Container === */
 #score-container { text-align: center; }
@@ -345,7 +352,7 @@ h3.question-flex {
 
 /* === Options Buttons === */
 #options-container .btn {
-  margin-bottom: 12px;
+  margin-bottom: 8px; /* reduce from 12px to 8px for tighter spacing */
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
   font-size: clamp(1rem, 1.1rem, 1.25rem); /* min 1rem, preferred 1.1rem, max 1.25rem */
