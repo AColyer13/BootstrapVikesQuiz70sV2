@@ -415,19 +415,32 @@ progress#quiz-progress::-webkit-progress-value {
 
 /* === Quiz Container: More space for question area === */
 #quiz-container .question-box-fixed {
-  min-height: 5.5em; /* slightly taller for quiz questions */
-  margin-bottom: 1.5rem; /* extra margin below question */
-}
-
-/* === Summary Container: More space for question area === */
-#score-container .review-panel .question-box-fixed {
-  min-height: 6em; /* increased for more lines and image space */
-  margin-bottom: 1.7rem; /* extra margin below question */
-  padding: 0 .7rem; /* more horizontal margin */
+  min-height: 7.5em; /* fits 3-4 lines of large text */
+  max-height: none;
+  padding: 1.5rem 1.2rem 1rem 1.2rem; /* top right bottom left */
+  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  background: none;
+}
+
+/* === Summary Container: More space for question area (final fix) === */
+#score-container .review-panel .question-box-fixed {
+  min-height: 7.5em; /* fits 3-4 lines of large text */
+  max-height: none;
+  padding: 1.5rem 1.2rem 1rem 1.2rem; /* top right bottom left */
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  background: none;
 }
 
 /* === Action Buttons Sizing === */
@@ -483,13 +496,17 @@ body.night-mode {
   min-height: 220px; /* Ensures enough height for vertical centering */
 }
 #score-container .review-panel .question-box-fixed {
-  min-height: 5em; /* was 4em, now allows one more line */
-  margin-bottom: 1.5rem; /* extra margin below question */
-  padding: 0 .5rem; /* more horizontal margin */
+  min-height: 7.5em; /* fits 3-4 lines of large text */
+  max-height: none;
+  padding: 1.5rem 1.2rem 1rem 1.2rem; /* top right bottom left */
+  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  background: none;
 }
 
 /* === Consistent vertical spacing for review panel elements === */
