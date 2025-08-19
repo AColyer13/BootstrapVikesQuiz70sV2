@@ -413,15 +413,10 @@ progress#quiz-progress::-webkit-progress-value {
 }
 .question-box-fixed.overflow { align-items: flex-start; }
 .question-box-fixed .question-flex {
-  font-size: 24px;
-  line-height: 28px;
-  margin: 0;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  font-weight: 600;
+  max-width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -599,5 +594,14 @@ body.night-mode {
     margin: 0;
     gap: 5px;
     box-sizing: border-box;
+  }
+}
+
+@media (max-width: 420px) {
+  .question-box-fixed .question-flex {
+    font-size: 1.05rem; /* reduce font size further for small screens */
+  }
+  #question-container {
+    margin-top: 1.2rem !important; /* add extra top margin so heading is always visible */
   }
 }
