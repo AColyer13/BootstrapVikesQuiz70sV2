@@ -495,7 +495,7 @@ body.night-mode {
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border-radius: 18px;
-  border: 2px solid rgba(255,255,255,0.22); /* add border to review card */
+  border: none !important; /* remove border, keep translucent effect */
   box-shadow: 0 4px 24px -8px rgba(0,0,0,0.18);
   width: 100%;
   max-width: 100%;
