@@ -480,7 +480,9 @@ progress#quiz-progress::-webkit-progress-value {
 .question-box-fixed.overflow { align-items: flex-start; }
 .question-box-fixed .question-flex {
   font-size: clamp(1rem, 1.35rem, 2rem); /* min 1rem, preferred 1.35rem, max 2rem */
-  line-height: 1.4;
+  line-height: 1.6; /* Increase line-height for better readability */
+  padding-top: 14px;
+  padding-bottom: 14px;
   font-weight: 600;
   max-width: 100%;
   word-break: break-word;
