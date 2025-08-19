@@ -44,7 +44,7 @@ html, body {
 }
 
 html {
-  font-size: 16px;
+  font-size: clamp(15px, 2vw, 18px); /* slightly smaller base, scales better */
   box-sizing: border-box;
 }
 *, *::before, *::after { box-sizing: inherit; }
@@ -190,15 +190,25 @@ body:not(.results-active) #summary-container {
 
 /* === Font Sizing === */
 html {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(15px, 2vw, 18px); /* slightly smaller base, scales better */
   box-sizing: border-box;
+}
+@media (max-width: 420px) {
+  html {
+    font-size: 14px; /* even smaller on very small screens */
+  }
+}
+@media (max-width: 340px) {
+  html {
+    font-size: 12px; /* for ultra-small screens */
+  }
 }
 *, *::before, *::after { box-sizing: inherit; }
 
 /* === Headings === */
 h1 {
   margin: 0 0 16px 0;
-  font-size: 42px;
+  font-size: 2.5rem; /* use rem for scaling */
   font-weight: 700;
   text-shadow:
     -2px -2px 0 #2d014d,
@@ -209,11 +219,11 @@ h1 {
 }
 h3.question-flex {
   margin: 3px 0 0 0 !important;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 1.35rem; /* use rem for scaling */
+  line-height: 1.4;
   font-weight: 600;
 }
-.badge { font-size: 14px; }
+.badge { font-size: 0.9rem; }
 
 /* === Question Area === */
 #question-container {
@@ -306,7 +316,7 @@ h3.question-flex {
 /* === Score Container Heading and Number (match h1 styling) === */
 #score-container h2.text-warning,
 #score-container .score-num {
-  font-size: 42px;
+  font-size: 2.5rem; /* use rem for scaling */
   font-weight: 700;
   color: #ffc107;
   margin-bottom: 1px !important;
@@ -336,9 +346,9 @@ h3.question-flex {
 /* === Options Buttons === */
 #options-container .btn {
   margin-bottom: 12px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-size: 18px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 1.1rem; /* use rem for scaling */
 }
 
 /* === Progress Bar === */
@@ -372,18 +382,19 @@ progress#quiz-progress::-webkit-progress-value {
     padding: 18px 18px 32px 18px !important;
     padding-top: 22px;
   }
-  h1 { font-size: 32px; }
-  .question-box-fixed { min-height: 70px; }
-  #score-container .review-panel .question-box-fixed { min-height: 90px; }
+  h1 { font-size: 2rem; }
+  .question-box-fixed { min-height: 3.5rem; }
+  #score-container .review-panel .question-box-fixed { min-height: 4.5rem; }
 }
 @media (max-width: 420px) {
-  .question-box-fixed { min-height: 80px; }
-  #score-container .review-panel .question-box-fixed { min-height: 100px; }
+  .question-box-fixed { min-height: 4rem; }
+  #score-container .review-panel .question-box-fixed { min-height: 5rem; }
   #next-button.btn-warning,
   #restart-button.btn-warning,
   #start-button.btn-warning {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    font-size: 1rem;
   }
 }
 
@@ -425,9 +436,9 @@ progress#quiz-progress::-webkit-progress-value {
 #next-button.btn-warning,
 #restart-button.btn-warning,
 #start-button.btn-warning {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-size: 18px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 1.1rem; /* use rem for scaling */
 }
 
 /* === Dynamic Theme Gradients === */
@@ -535,7 +546,7 @@ body.night-mode {
 
 #score-container .answers .badge.bg-danger,
 #score-container .answers .badge.bg-success {
-  font-size: 16px;
+  font-size: 1rem; /* use rem for scaling */
   text-align: center;
   font-weight: 600;
   padding: 5px 12px;
@@ -552,7 +563,7 @@ body.night-mode {
 
 #score-container .answers strong,
 #score-container .answers em {
-  font-size: 17px;
+  font-size: 1.05rem; /* use rem for scaling */
   text-align: left;
   font-weight: 600;
   margin: 0;
