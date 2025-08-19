@@ -380,16 +380,18 @@ progress#quiz-progress::-webkit-progress-value {
 }
 
 /* === Fixed-height Question Area === */
+
 .question-box-fixed {
-  --q-lines: 5;
   line-height: 1.25;
-  height: calc(var(--q-lines) * 1.25em);
+  min-height: 4em;
+  max-height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding: 0 .25rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 .question-box-fixed.overflow { align-items: flex-start; }
 .question-box-fixed .question-flex {
@@ -401,6 +403,7 @@ progress#quiz-progress::-webkit-progress-value {
   justify-content: center;
   align-items: center;
   word-break: break-word;
+  overflow-wrap: break-word;
 }
 .question-box-fixed::-webkit-scrollbar { width: 6px; }
 .question-box-fixed::-webkit-scrollbar-track { background: transparent; }
@@ -462,12 +465,13 @@ body.night-mode {
   min-height: 220px; /* Ensures enough height for vertical centering */
 }
 #score-container .review-panel .question-box-fixed {
-  --q-lines: 7;
-  height: calc(var(--q-lines) * 1.25em);
+  min-height: 4em;
+  max-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 .25rem;
+  width: 100%;
 }
 
 /* === Consistent vertical spacing for review panel elements === */
