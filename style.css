@@ -382,7 +382,13 @@ progress#quiz-progress::-webkit-progress-value {
 
 /* === Responsive: Small Screens === */
 @media (max-width: 576px) {
-  body { padding: 0; }
+  body {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+  .container {
+    margin: 4px !important;
+  }
   .main-wrapper {
     max-width: 100%;
     padding: 0;
