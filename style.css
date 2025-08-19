@@ -661,3 +661,17 @@ body.night-mode {
     padding-right: 3rem !important;
   }
 }
+
+/* === iPad Portrait (768px wide) === */
+@media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
+  html { font-size: 18px; }
+  .container, .main-wrapper, #score-container { max-width: 680px; }
+  #options-container .btn { font-size: 1.15rem; padding: 1rem 1.2rem; }
+}
+
+/* === iPad Landscape (1024px wide) === */
+@media (min-width: 900px) and (max-width: 1200px) and (orientation: landscape) {
+  html { font-size: 19px; }
+  .container, .main-wrapper, #score-container { max-width: 900px; }
+  #options-container .btn { font-size: 1.18rem; padding: 1.1rem 1.3rem; }
+}
